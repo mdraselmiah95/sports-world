@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./AllTeams.css";
 const AllTeams = () => {
   const [teams, setTeams] = useState([]);
@@ -40,7 +41,9 @@ const AllTeams = () => {
               <p>{team.strLeague}</p>
               <p>{team.strCountry}</p>
               <p>{team.strGender}</p>
-              <button className="btn btn-success">Details</button>
+              <Link to={`/details`}>
+                <button className="btn btn-success">Details</button>
+              </Link>
             </div>
           </div>
         ))}
