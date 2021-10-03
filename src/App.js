@@ -6,9 +6,12 @@ import Error from "./components/Error/Error";
 import Home from "./components/Home/Home";
 import Sports from "./components/Sports/Sports";
 import TeamDetails from "./components/TeamDetails/TeamDetails";
-const userContext = createContext();
+export const userContext = createContext();
 function App() {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({
+    name: "IceLandic",
+  });
+
   return (
     <div className="App">
       <userContext.Provider value={[user, setUser]}>
