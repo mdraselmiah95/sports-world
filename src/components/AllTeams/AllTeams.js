@@ -2,16 +2,25 @@ import React, { useEffect, useState } from "react";
 import "./AllTeams.css";
 const AllTeams = () => {
   const [teams, setTeams] = useState([]);
+  const [searchText, setSearchText] = useState("");
   useEffect(() => {
-    fetch("https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Arsenal")
+    fetch(
+      `https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=${searchText}`
+    )
       .then((res) => res.json())
       .then((data) => setTeams(data.teams));
-  }, []);
+  }, [searchText]);
+
+  const handleOnChange = (e) => {
+    setSearchText(e.target.value);
+  };
+  console.log(searchText);
   return (
     <div className="team-container">
       <h1>Our Team {teams.length}</h1>
       <div className="search-box">
         <input
+          onChange={handleOnChange}
           type="text"
           name=""
           id=""
@@ -27,6 +36,11 @@ const AllTeams = () => {
               <div className="logo-image">
                 <img src={team.strTeamBadge} alt="" className="w-50" />
               </div>
+              <h2>{team.strTeam}</h2>
+              <p>{team.strLeague}</p>
+              <p>{team.strCountry}</p>
+              <p>{team.strGender}</p>
+              <button className="btn btn-success">Details</button>
             </div>
           </div>
         ))}
