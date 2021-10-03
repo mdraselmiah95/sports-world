@@ -41,7 +41,7 @@ const AllTeams = () => {
               <p>{team.strLeague}</p>
               <p>{team.strCountry}</p>
               <p>{team.strGender}</p>
-              <Link to={`/details`}>
+              <Link to={`/details/${team.idTeam}`}>
                 <button className="btn btn-success">Details</button>
               </Link>
             </div>

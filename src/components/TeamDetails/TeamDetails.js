@@ -1,10 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router";
 import MenuBar from "../MenuBar/MenuBar";
 import "./TeamDetails.css";
-const TeamDetails = () => {
+const TeamDetails = (props) => {
+  const { teamId } = useParams();
+  const [details, setDetails] = useState({});
+
+  useEffect(() => {
+    fetch(
+      `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${teamId}`
+    )
+      .then((res) => res.json())
+      .then((data) => setDetails(data.teams[0]));
+  }, []);
   return (
     <div className="details">
       <MenuBar></MenuBar>
+      <div className="male-female"></div>
+      <div className="row">
+        <div className="col-md-6">
+          <div className="logo-img">
+            <img className="w-50" src={details.strTeamBadge} alt="" />
+          </div>
+        </div>
+        <div className="col-md-6"></div>
+      </div>
     </div>
   );
 };
