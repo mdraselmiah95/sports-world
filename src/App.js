@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Home from "./components/Home/Home";
+import Sports from "./components/Sports/Sports";
 import TeamDetails from "./components/TeamDetails/TeamDetails";
 
 function App() {
@@ -14,6 +15,9 @@ function App() {
           </Route>
           <Route path="/home">
             <Home />
+          </Route>
+          <Route path="/sports">
+            <Sports />
           </Route>
           <Route path="/details/:teamId">
             <TeamDetails />
