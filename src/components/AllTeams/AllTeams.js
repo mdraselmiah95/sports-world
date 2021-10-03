@@ -20,6 +20,17 @@ const AllTeams = () => {
         />
         <button className="btn btn-danger">Search</button>
       </div>
+      <div className="row">
+        {teams.map((team) => (
+          <div className="col-md-4">
+            <div className="cart">
+              <div className="logo-image">
+                <img src={team.strTeamBadge} alt="" className="w-50" />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
