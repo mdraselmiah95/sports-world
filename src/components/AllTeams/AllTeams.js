@@ -37,7 +37,6 @@ const AllTeams = () => {
               <div className="logo-image">
                 <img src={team.strTeamBadge} alt="" className="w-50" />
               </div>
-              key = {team.idTeam}
               <h2>{team.strTeam}</h2>
               <p>{team.strLeague}</p>
               <p>{team.strCountry}</p>
