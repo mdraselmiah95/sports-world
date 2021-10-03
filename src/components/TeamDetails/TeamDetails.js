@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import female from "../../images/female.png";
+import male from "../../images/male.png";
 import MenuBar from "../MenuBar/MenuBar";
 import "./TeamDetails.css";
 const TeamDetails = (props) => {
@@ -16,11 +18,19 @@ const TeamDetails = (props) => {
   return (
     <div className="details">
       <MenuBar></MenuBar>
-      <div className="male-female"></div>
+      <div className="male-female p-3">
+        {details.strGender === "Male" ? (
+          <img className="w-50 img-fluid" src={male} alt="" />
+        ) : (
+          <img className="w-50 img-fluid" src={female} alt="" />
+        )}
+      </div>
       <div className="row">
-        <div className="col-md-6">
+        <div className="col-md-6 text-info">
           <div className="logo-img">
             <img className="w-50" src={details.strTeamBadge} alt="" />
+            <h1>{details.strLeague}</h1>
+            <p>{details.strDescriptionEN}</p>
           </div>
         </div>
         <div className="col-md-6"></div>
