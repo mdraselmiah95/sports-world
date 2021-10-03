@@ -2,8 +2,18 @@ import React from "react";
 import "./AllTeams.css";
 const AllTeams = () => {
   return (
-    <div>
-      <h2>THis is </h2>
+    <div className="team-container">
+      <h1>Our Team</h1>
+      <div className="search-box">
+        <input
+          type="text"
+          name=""
+          id=""
+          placeholder="Enter team name"
+          className="py-1"
+        />
+        <button className="btn btn-danger">Search</button>
+      </div>
     </div>
   );
 };
