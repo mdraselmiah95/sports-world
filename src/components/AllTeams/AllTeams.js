@@ -17,7 +17,7 @@ const AllTeams = () => {
   console.log(searchText);
   return (
     <div className="team-container">
-      <h1>Our Team {teams.length}</h1>
+      <h1>Our Team</h1>
       <div className="search-box">
         <input
           onChange={handleOnChange}
@@ -30,7 +30,7 @@ const AllTeams = () => {
         <button className="btn btn-danger">Search</button>
       </div>
       <div className="row">
-        {teams.map((team) => (
+        {teams?.map((team) => (
           <div className="col-md-4">
             <div className="cart">
               <div className="logo-image">
